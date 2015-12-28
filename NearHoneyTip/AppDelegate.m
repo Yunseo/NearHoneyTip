@@ -13,15 +13,20 @@
 @end
 
 @implementation AppDelegate
+@synthesize locationManager;
+
 
 NSUserDefaults *preferences;
 NSURLResponse *response;
 NSMutableData *data;
+CLGeocoder *geocoder;
+CLPlacemark *placemark;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //NSLog(@"hi!!!!: " );
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self setUserDefault];
+    [self getUserGPS];
     return YES;
 }
 
@@ -122,6 +127,60 @@ NSMutableData *data;
         NSLog(@"connection end");
     }
 }
+
+
+#pragma mark - CLLocationManager delegate methods
+
+-(void)getUserGPS {
+    geocoder = [[CLGeocoder alloc] init];
+    if (locationManager == nil)
+    {
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        locationManager.delegate = self;
+        [locationManager requestAlwaysAuthorization];
+    }
+    [locationManager startUpdatingLocation];
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    
+    CLLocation *newLocation = [locations lastObject];
+    
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            
+            NSLog(@"Current my location latitude is : %f",newLocation.coordinate.latitude);
+            
+            NSLog(@"Current my location longitude is : %f",newLocation.coordinate.longitude);
+            
+            
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+    
+    // Turn off the location manager to save power.
+    [manager stopUpdatingLocation];
+    
+    NSLog(@"%f", newLocation.coordinate.latitude);
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"Cannot find the location.");
+}
+
+
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

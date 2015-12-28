@@ -50,7 +50,7 @@
     CLLocation *newLocation = [locations lastObject];
     
     [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        
+    
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             txtLatitude.text = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
