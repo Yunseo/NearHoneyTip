@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
 		6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */; };
+		6F8682F51C3267570015B53F /* NHTMyTipDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8682F41C3267570015B53F /* NHTMyTipDetailController.m */; };
 		6FA2C4331C30039F0014964D /* NHTGetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */; };
 		6FA2C4351C3003BC0014964D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4341C3003BC0014964D /* CoreLocation.framework */; };
 		6FA2C4371C3003C20014964D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4361C3003C20014964D /* UIKit.framework */; };
@@ -101,6 +102,8 @@
 		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
 		6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsTableCell.h; sourceTree = "<group>"; };
 		6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsTableCell.m; sourceTree = "<group>"; };
+		6F8682F31C3267570015B53F /* NHTMyTipDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMyTipDetailController.h; sourceTree = "<group>"; };
+		6F8682F41C3267570015B53F /* NHTMyTipDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMyTipDetailController.m; sourceTree = "<group>"; };
 		6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTGetLocationViewController.h; sourceTree = "<group>"; };
 		6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTGetLocationViewController.m; sourceTree = "<group>"; };
 		6FA2C4341C3003BC0014964D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -312,6 +315,8 @@
 				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
 				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
 				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
+				6F8682F31C3267570015B53F /* NHTMyTipDetailController.h */,
+				6F8682F41C3267570015B53F /* NHTMyTipDetailController.m */,
 				CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */,
 				CE3355C41BE9CB9100B77DEC /* Assets.xcassets */,
 				CE3355C91BE9CB9200B77DEC /* Info.plist */,
@@ -683,6 +688,7 @@
 				CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */,
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
+				6F8682F51C3267570015B53F /* NHTMyTipDetailController.m in Sources */,
 				6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
 				A863274E1C2A0704001B293B /* YCameraViewController.m in Sources */,

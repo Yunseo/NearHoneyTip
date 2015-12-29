@@ -25,6 +25,20 @@
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 mytipsDidLoad];
     
+//    NSLog(@"HEIGHT : %f",self.tableView.bounds.size.height);
+//    self.refreshManager = [[UIRefreshControl alloc] init];
+//    self.refreshManager.backgroundColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
+//    
+//    //
+//    [self.tableView addSubview: self.refreshManager];
+//    [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
+//    
+//    self.Q1 = [[NHTTipManager alloc]init];
+//    [self.Q1 tipsDidLoad];
+//    
+//    UIButton *newPost = [[self view] viewWithTag:123];
+//    newPost.layer.cornerRadius = 25;
+//    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +74,40 @@
     cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"#####3-1%@", sender);
+    if([segue.identifier isEqual:@"showTipDetail"]){
+        
+        NSLog(@"#####3-2%@", sender);
+        NSLog(@"####sender target? %@",[sender view]);
+        NHTMainTableCell *tipCell = [sender view];
+        
+        
+        
+        if(tipCell){
+            NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+            if(tipCell.tip){
+                
+                
+                NSLog(@"this is tip %@", tipCell.tip);
+                
+                tipDetailController.tip = tipCell.tip;
+            }
+        }
+    }
+}
+
+- (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+    
+    
+    NSLog(@"#####1%@", recognizer);
+    [self showTipDetail:recognizer];
+}
+- (IBAction)showTipDetail:(id)sender {
+    NSLog(@"#####2%@", sender);
+    [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
 }
 
 

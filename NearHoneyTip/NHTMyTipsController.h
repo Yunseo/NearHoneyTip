@@ -10,10 +10,15 @@
 @class NHTTip;
 @class NHTTipManager;
 
-@interface NHTMyTipsController : UITableViewController
+@interface NHTMyTipsController : UITableViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
+@property (strong, nonatomic) UIRefreshControl *refreshManager;
 @property (strong, nonatomic) NHTTip *selectedTip;
 @property (strong, nonatomic) NHTTipManager *Q1;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager;
+- (void)getLatestTips;
 
 //@property (strong, nonatomic) NSArray *userProfileImage;
 //@property (strong, nonatomic) NSArray *StoreName;
