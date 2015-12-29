@@ -9,8 +9,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import <ADSupport/ASIdentifierManager.h>
 #import <CoreLocation/CoreLocation.h>
+#import <ADSupport/ASIdentifierManager.h>
+
+@class NHTGetLocationViewController;
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -21,8 +23,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
 @property (nonatomic, retain) CLLocationManager *locationManager;
+
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
