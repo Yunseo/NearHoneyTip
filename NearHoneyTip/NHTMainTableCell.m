@@ -43,6 +43,9 @@
     [self.userProfileImage sd_setImageWithURL:[NSURL URLWithString:tipIconPathWhole]
                      placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
     
+    NSLog(@"*** Main self.userProfileImage: %@", self.userProfileImage);
+
+    
     self.userNickname.text = self.tip.userNickname;
     self.tipDate.text = self.tip.tipDate;
     

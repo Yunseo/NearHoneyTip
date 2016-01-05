@@ -14,6 +14,7 @@
 
 @interface NHTDetailViewController (){
     NSUserDefaults *preferences;
+    UIPopoverController *popover;
 }
 @end
 
@@ -167,4 +168,22 @@
 }
 */
 
+- (IBAction)deleteButton:(id)sender {
+    NSLog(@"123412341234");
+
+    
+    UIView *anchor = sender;
+    NSLog(@"anchor: @%", anchor);
+
+//    UIViewController *viewControllerForPopover =
+//    [self.storyboard instantiateViewControllerWithIdentifier:@"DeleteView"];
+//    
+//    popover = [[UIPopoverController alloc]
+//               initWithContentViewController:viewControllerForPopover];
+//    [popover presentPopoverFromRect:anchor.frame
+//                             inView:anchor.superview
+//           permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+    
+}
 @end

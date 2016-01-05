@@ -13,7 +13,7 @@
 @class NHTButtonTapPost;
 
 
-@interface NHTDetailViewController : UIViewController
+@interface NHTDetailViewController : UIViewController <UIPopoverPresentationControllerDelegate>
 
 @property (strong, nonatomic) NHTTip *tip;
 @property (strong, nonatomic) NHTButtonTapPost *postManager;
@@ -33,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *storeMapView;
 
+- (IBAction)deleteButton:(id)sender;
 
 
 @end
