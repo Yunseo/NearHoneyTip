@@ -32,6 +32,8 @@ NSMutableData *data;
     NSLog(@"start to set uuid");
     preferences = [NSUserDefaults standardUserDefaults];
    // [preferences removeObjectForKey:@"UserDefault"];
+    
+    
     NSString *uidIdentifier = @"UserDefault";
     
     

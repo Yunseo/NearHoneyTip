@@ -29,6 +29,12 @@
     NSString *profilephoto;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    //    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    //    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+    
     NSString *uidIdentifier = @"UserDefault";
     
     if ([preferences objectForKey:uidIdentifier] != nil) {
