@@ -14,15 +14,10 @@ UIImagePickerControllerDelegate, CustomeImagePickerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *outputLabel;
 @property (weak, nonatomic) IBOutlet UITextField *inputText;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelWrite;
-
-
-//- (IBAction)backgroundSender:(id)sender;
 - (IBAction)profileEditButton:(id)sender;
-- (IBAction)saveTip:(id)sender;
-//- (IBAction)cancelWrite:(id)sender;
-
+- (IBAction)saveEdit:(id)sender;
+- (IBAction)cancelEdit:(id)sender;
+//- (IBAction)backgroundSender:(id)sender;
 @end
 
 

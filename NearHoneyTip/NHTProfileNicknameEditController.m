@@ -11,8 +11,11 @@
 @interface NHTProfileNicknameEditController ()
 
 @end
+NSString *newNickname;
 
 @implementation NHTProfileNicknameEditController
+
+
 @synthesize outputLabel, inputText;
 
 
@@ -49,6 +52,7 @@
 }
 
 
+
 - (void)viewDidUnLoad {
     [self setOutputLabel:nil];
     [self setInputText:nil];
@@ -56,19 +60,11 @@
     
 }
 
-- (IBAction)cancelWrite:(id)sender {
+- (IBAction)saveEdit:(id)sender {
+}
+
+- (IBAction)cancelEdit:(id)sender {
     NSLog(@"%@",self.navigationController.viewControllers);
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

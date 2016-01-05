@@ -7,14 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomeImagePicker.h"
 
-@interface NHTProfileImgEditController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *editedImage;
+@interface NHTProfileImgEditController : UIViewController<UINavigationControllerDelegate,
+UIImagePickerControllerDelegate, CustomeImagePickerDelegate>
+
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *editedProfileImage;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelWrite;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
-- (IBAction)saveTip:(id)sender;
+@property (strong, nonatomic) UIImage *chosenImg;
+
+- (IBAction)cancelEdit:(id)sender;
+- (IBAction)saveEdit:(id)sender;
+
+- (void) connection:(NSURLConnection *) connection didReceiveResponse:(nonnull NSURLResponse *)response2;
+
 @end
 
 

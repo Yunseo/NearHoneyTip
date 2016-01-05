@@ -726,25 +726,8 @@ imgComment</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" id="d1F-V8-kGq" userLabel="AlarmCell">
-                                        <rect key="frame" x="0.0" y="299" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1F-V8-kGq" id="B6E-KD-dLG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iez-Fc-1nG">
-                                                    <rect key="frame" x="16" y="8" width="296" height="30"/>
-                                                    <state key="normal" title="알람 보기 "/>
-                                                    <connections>
-                                                        <segue destination="4s8-o8-6gY" kind="push" id="Ign-hj-Tm9"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setProfileCell" id="gsh-2G-AFc" userLabel="setProfileCell">
-                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="299" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gsh-2G-AFc" id="QSg-OC-kCD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -951,7 +934,7 @@ imgComment</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" textLabel="xiI-1W-q2T" rowHeight="153" style="IBUITableViewCellStyleDefault" id="mZH-ok-YiH" customClass="NHTAlarmsTableCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="153"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZH-ok-YiH" id="nbZ-B2-5Vs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
@@ -1144,6 +1127,9 @@ imgComment</string>
                                     <constraint firstAttribute="width" constant="100" id="JDs-mQ-tcE"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxZ-nJ-gP8">
+                                <rect key="frame" x="60" y="222" width="240" height="225"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1156,20 +1142,20 @@ imgComment</string>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Kpb-LC-Yr3">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelWrite:" destination="UCv-dY-5bw" id="lIy-Ya-MEN"/>
+                                <action selector="cancelEdit:" destination="UCv-dY-5bw" id="7gD-YA-vEi"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="rmI-kA-jge">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="saveTip:" destination="UCv-dY-5bw" id="5r2-31-PLX"/>
+                                <action selector="saveEdit:" destination="UCv-dY-5bw" id="7bs-kA-QnQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cancelWrite" destination="Kpb-LC-Yr3" id="p6l-tr-rNL"/>
                         <outlet property="editedProfileImage" destination="G9b-m5-UzM" id="S6b-ku-U0I"/>
+                        <outlet property="imgView" destination="sxZ-nJ-gP8" id="F3i-ea-eoD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ook-rv-aLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1213,19 +1199,18 @@ imgComment</string>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="SIr-QJ-Ma7">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelWrite:" destination="Dkd-C5-13R" id="mPs-bz-NVG"/>
+                                <action selector="cancelEdit:" destination="Dkd-C5-13R" id="r38-eV-VUx"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ePB-gH-58a">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="saveTip:" destination="Dkd-C5-13R" id="yqG-bD-g7B"/>
+                                <action selector="saveEdit:" destination="Dkd-C5-13R" id="eGd-bo-RyU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cancelWrite" destination="SIr-QJ-Ma7" id="nMn-re-3J3"/>
                         <outlet property="inputText" destination="1kS-Sv-Qo8" id="Wdx-Zx-mLq"/>
                         <outlet property="outputLabel" destination="UmJ-PT-89j" id="jlH-qV-8JJ"/>
                     </connections>

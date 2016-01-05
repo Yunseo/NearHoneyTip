@@ -29,18 +29,27 @@
     NSString *profilephoto;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    
+
+    [preferences removeObjectForKey:@"UserDefault"];
+
     //    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     //    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     
+        NSLog(@"<<<<preferences: %@", preferences);
+
     NSString *uidIdentifier = @"UserDefault";
+        NSLog(@"<<<<uidIdentifier: %@", uidIdentifier);
     
     if ([preferences objectForKey:uidIdentifier] != nil) {
         uid = [preferences objectForKey:uidIdentifier];
         nickname = [preferences objectForKey:@"userNickname"];
         profilephoto = [preferences objectForKey:@"userProfileImagePath"];
+        
+        NSLog(@"<<<<uid: %@", 	uid);
+        NSLog(@"<<<<nickname: %@", 	nickname);
+        NSLog(@"<<<<profilephoto: %@", 	profilephoto);
         
         _userNickname.text = nickname;
         
